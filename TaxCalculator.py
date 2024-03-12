@@ -24,9 +24,11 @@ print("You have",(num_dep),"dependents.")
 gross_inc_float = float(gross_inc)
 num_dep_int = int(num_dep)
 
+total_deduction = 12200 + (2000 * num_dep_int)
+
 #calculate taxable income
-tax_income = gross_inc_float - 12200 - (2000 * num_dep_int)
-print("Your taxable income is $",(int(tax_income)),".")
+tax_income = gross_inc_float - total_deduction
+print("Your taxable income is $",(tax_income),".")
 
 # calculate tax due
 if tax_income <=0: 
@@ -46,5 +48,5 @@ elif tax_income <= max35:
 elif tax_income > max35: 
     tax_due = tier35_tax + ((tax_income - max35) * .37)
 #print the result
-print("You owe $",(int(tax_due)), "in taxes.")
+print("You owe $" + str(int(tax_due)), "in taxes.")
 
